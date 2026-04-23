@@ -11,21 +11,21 @@ Structured breakdown of `index.html`:
 
 ## 2. Navigation
 - **Desktop** (`.main-nav-parent.desktop`)
-    - **Links**: Logo (SHAUKIA A.), Portfolio, Contact.
+    - **Links**: Logo (portfolio A.), Portfolio, Contact.
     - **Visuals**: Trapezoid image background + lines.
 - **Mobile** (`.main-nav-parent.mobile`)
     - **Links**: Same structure, simplified layout.
     - **Visuals**: Same trapezoid asset.
 
 ## 3. Hero Section (`#luxy .shaukia-hero-holder`)
-- **Text Layers**: "THIS IS SHAUKIA" (Split spans for potential stagger).
+- **Text Layers**: "THIS IS portfolio" (Split spans for potential stagger).
 - **Sub-heading**: "MODEL / ARTIST".
 - **CTA**: "CONTACT" button with dual text layers (hover effect).
 - **Footer**: Location and Copyright text.
-- **Background**: Image (`shaukia-hero-img-darker.jpg`) with overlay.
+- **Background**: Image (`portfolio-hero-img-darker.jpg`) with overlay.
 
 ## 4. Intro Section (`.shaukia-intro-holder`)
-- **Heading**: "I AM SHAUKIA ALHASSAN..." using `.fade-up` and `.tricks` classes for scroll-triggered text reveal.
+- **Heading**: "I AM portfolio ALHASSAN..." using `.fade-up` and `.tricks` classes for scroll-triggered text reveal.
 
 ## 5. Bio Section (`.shaukia-bio-holder`)
 - **Layout**: Split Left/Right.

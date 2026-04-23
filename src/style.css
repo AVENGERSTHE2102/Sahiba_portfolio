@@ -354,13 +354,13 @@ a {
 }
 
 /* Hero Image Visibility Fix */
-.shaukia-img-model-overlay {
+.sahiba-img-model-overlay {
     z-index: 0 !important;
     /* Bring the container up to visible level */
     opacity: 1 !important;
 }
 
-.shaukia-img-model-overlay .shaukia-hero-image {
+.sahiba-img-model-overlay .sahiba-hero-image {
     z-index: -1 !important;
     /* Keep image behind the overlay tint */
     position: relative !important;
@@ -373,22 +373,28 @@ a {
 /* Personal Portfolio Section Background */
 .personal-porfolio-parent {
     z-index: 1 !important;
-    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/src/assets/images/hero_image.jpeg") !important;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/src/assets/images/WhatsApp Image 2026-04-24 at 01.42.40.jpeg") !important;
     background-position: 50% 50% !important;
     background-size: cover !important;
 }
 
+@media screen and (max-width: 767px) {
+    .personal-porfolio-parent {
+        background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/src/assets/images/SAHIBA_MOBILE.jpg") !important;
+    }
+}
+
 /* Fix Text Layering over Hero Image */
-.shaukia-hero-holder {
+.sahiba-hero-holder {
     position: relative !important;
 }
 
-.shaukia-hero-holder .container-full {
+.sahiba-hero-holder .container-full {
     z-index: 10 !important;
     position: relative !important;
 }
 
-.shaukia-hero-holder .home-hero-btm {
+.sahiba-hero-holder .home-hero-btm {
     z-index: 10 !important;
     position: absolute !important;
     bottom: 0% !important;
@@ -425,26 +431,146 @@ a {
 
 /* Force visibility of sections after hero on mobile */
 @media screen and (max-width: 991px) {
-    .shaukia-intro-holder,
-    .shaukia-bio-holder,
-    .shaukia-bio-img-holder,
+    .sahiba-intro-holder,
+    .sahiba-bio-holder,
+    .sahiba-bio-img-holder,
     .looping-wrapper {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
 
-    /* Ensure the bio image loop has height */
-    .shaukia-bio-img-holder {
-        height: auto !important;
-        min-height: 200px !important;
-        display: flex !important;
-        overflow-x: auto !important;
+    /* Ensure the bio image loop maintains its relative container */
+    .sahiba-bio-img-holder {
+        display: block !important;
     }
     
-    .shaukia-bio-img {
-        display: block !important;
-        width: 200px !important;
-        max-width: none !important;
+    .sahiba-bio-img {
+        /* Removed display: block !important to allow .shown-image logic to work */
+        width: 100% !important; /* Reverting to container width */
+        height: 100% !important;
+        object-fit: cover !important;
     }
+}
+
+/* Corrected Vertical Alignment */
+.sahiba-home-portfolio {
+    padding-bottom: 1rem !important;
+}
+
+.sahiba-personal-portfolio {
+    padding-top: 0 !important;
+}
+
+.sahiba-intro-holder {
+    padding-top: 4rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: 0 !important;
+}
+
+.sahiba-bio-holder {
+    padding-top: 2rem !important;
+    margin-top: 0 !important;
+}
+
+.loop-marquee-holder {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 4rem 0 5rem 0;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+.about-me-marquee {
+    padding: 6rem 0 !important; /* Centering between sections */
+    margin-top: 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+    .sahiba-bio-parent {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .sahiba-bio-l {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .sahiba-bio-img-holder {
+        width: 85vw !important;
+        height: 85vw !important;
+        margin: 0 auto 2.5rem auto !important; /* Perfect horizontal centering */
+        border-radius: 4px; /* Optional slight rounding for premium feel */
+    }
+
+    .sahiba-bio-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Enforces the square look */
+    }
+}
+
+.looping-wrapper {
+    display: flex !important;
+    width: max-content;
+    animation: marquee-scroll 15s linear infinite; /* Increased to 15s */
+    will-change: transform;
+}
+
+.looping-heading-wrapper {
+    display: flex !important;
+    align-items: center;
+    flex-shrink: 0;
+    padding-right: 80px;
+}
+
+.looping-heading {
+    color: #fbfbfb;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    font-family: inherit;
+}
+
+.heading-separator {
+    width: 100px;
+    height: 2px;
+    background-color: rgba(251, 251, 251, .7);
+    margin: 0 32px;
+    flex-shrink: 0;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media screen and (max-width: 991px) {
+    .looping-heading {
+        font-size: 48px;
+    }
+    .heading-separator {
+        width: 50px;
+    }
+    .loop-marquee-holder {
+        padding: 3rem 0;
+        margin-top: 0;
+    }
+    .looping-wrapper {
+        animation-duration: 10s;
+    }
+}
+
+#showcase-img {
+    filter: grayscale(0%);
+    will-change: transform, opacity;
 }

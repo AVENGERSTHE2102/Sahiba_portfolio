@@ -193,17 +193,27 @@ $(document).ready(function () {
         }
     });
 
-    // Image Loop
-    let loopImageDuration = 450;
-    $(".loop-parent").each(function (index) {
-        let loopParent = $(this);
-        setInterval(function () {
-            let images = loopParent.find(".loop-image");
-            let currentIndex = images.index(images.filter(".shown-image"));
-            let nextIndex = (currentIndex + 1) % images.length;
+    // Custom Anime JS trigger removed. Element is animated by Webflow IX2 via data-w-id=ee195660...
 
-            images.eq(currentIndex).removeClass("shown-image");
-            images.eq(nextIndex).addClass("shown-image");
+
+    // Image Loop - Enhanced for robustness
+    const loopImageDuration = 450;
+    $(".loop-parent").each(function () {
+        const $parent = $(this);
+        const $images = $parent.find(".loop-image");
+        if ($images.length === 0) return;
+
+        setInterval(function () {
+            const $active = $parent.find(".loop-image.shown-image");
+            let nextIndex = 0;
+            
+            if ($active.length > 0) {
+                const currentIndex = $images.index($active);
+                nextIndex = (currentIndex + 1) % $images.length;
+                $active.removeClass("shown-image");
+            }
+            
+            $images.eq(nextIndex).addClass("shown-image");
         }, loopImageDuration);
     });
     // Loading Screen Animation

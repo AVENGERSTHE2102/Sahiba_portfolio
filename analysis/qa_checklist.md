@@ -8,7 +8,7 @@
 
 ### 2. Images
 - **Alt Text**: Most images have `alt` attributes derived from the original source (e.g., "model", "kia", "navigation-rectangle").
-    - **Improvement**: `alt` text like "model" or "kia" is vague. Recommending specific descriptions like "Shaukia posing sideways in a denim jacket".
+    - **Improvement**: `alt` text like "model" or "kia" is vague. Recommending specific descriptions like "portfolio posing sideways in a denim jacket".
 
 ### 3. Contrast & Colors
 - **Text on Images**: White text on the Hero image relies on the dark overlay (`.shaukia-img-model-overlay`). Ensure the overlay opacity is sufficient for WCAG AA standards.
